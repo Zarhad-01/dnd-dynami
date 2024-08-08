@@ -1,5 +1,5 @@
 // src/app/page.tsx
-'use client';
+"use client";
 
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
