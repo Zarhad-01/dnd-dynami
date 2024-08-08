@@ -1,4 +1,3 @@
-// src/app/page.tsx
 'use client';
 
 import { useRouter } from 'next/navigation';
@@ -8,7 +7,12 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('/login');
+    const isAuthenticated = localStorage.getItem('isAuthenticated');
+    if (isAuthenticated) {
+      router.push('/threads');
+    } else {
+      router.push('/login');
+    }
   }, [router]);
 
   return (
